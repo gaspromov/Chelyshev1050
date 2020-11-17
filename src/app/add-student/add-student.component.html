@@ -1,0 +1,18 @@
+<form class="row p-4" [formGroup]='addForm'>
+
+    <input type="text" class="form-control col-2 mr-1 mb-2" placeholder="lastName" formControlName="lastName">
+    <input type="text" class="form-control col-2 mr-1 mb-2" placeholder="firstName" formControlName="firstName">
+    <input type="text" class="form-control col-2 mr-1 mb-2" placeholder="middleName" formControlName="middleName">
+    <input type="text" class="form-control col-2 mr-1 mb-2" placeholder="phone" formControlName="phone" prefix="+7" mask="(000)-000-00-00">
+    <input type="email" class="form-control col-2 mr-1 mb-2" placeholder="email" formControlName="email">
+    <input type="date" class="form-control col-2 mr-1 mb-2" placeholder="birthDay" formControlName="birthDay">
+    <input type="text" class="form-control col-2 mr-1 mb-2" placeholder="group" formControlName="group" mask="000-000" [dropSpecialCharacters]="false">
+    <input type="text" class="form-control col-2 mr-1 mb-2" placeholder="direction" formControlName="direction">
+    
+    <button class="btn btn-success mb-2" [disabled]="addForm.invalid" (click)="postStudent()" *ngIf="studentId === -1">Add</button>
+    <ng-template [ngIf]="studentId !== -1">
+        <button class="btn btn-success mb-2 mr-2" [disabled]="addForm.invalid" (click)="putStudent()">Edit</button>
+        <button class="btn btn-danger mb-2" (click)="deleteStudent()">Delete</button>
+    </ng-template>
+
+</form>

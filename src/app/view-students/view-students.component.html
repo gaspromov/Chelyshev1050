@@ -1,0 +1,31 @@
+<div class="content">
+
+    <app-add-student (changeStudents)="getStudents()" [studentId]="edittingStudentId"></app-add-student>
+
+    <div class="navbar mb-4">
+          <div class="form-inline my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="search">
+          </div>
+    </div>
+
+    <div *ngIf="students[0]">
+
+        <div class="row mb-2" *ngFor="let student of students |sort | search : search">
+            <div class="col-5 p-2">
+                {{ student.lastName }} {{ student.firstName | firstChar }}.{{ student.middleName | firstChar }}
+            </div>
+                
+            <div class="col-2 p-2">
+                {{ student.group }}
+            </div>
+            <div class="col-3 p-2">
+                {{ student.direction }}
+            </div>
+            <div class="col-1">
+                <button class="btn btn-warning" (click)="editStudent(student.id)">Edit</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

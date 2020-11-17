@@ -1,0 +1,15 @@
+{
+  "students": [
+    {
+      "lastName": "Chelyshev",
+      "firstName": "Nikolay",
+      "middleName": "Alexandrr",
+      "phone": "9885466266",
+      "email": "utliy12@mail.ru",
+      "birthDay": "2000-12-22",
+      "group": "181-322",
+      "direction": "Web",
+      "id": 4
+    }
+  ]
+}
